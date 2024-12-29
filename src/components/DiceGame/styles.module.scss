@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  gap: 1rem;
+  max-width: 630px;
+  padding: 113px 15px 20px;
+  margin: 0 auto;
+}
+
+.game {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.condition {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
