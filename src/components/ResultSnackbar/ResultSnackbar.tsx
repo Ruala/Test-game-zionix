@@ -19,15 +19,19 @@ const ResultSnackbar: React.FC<IResultSnackbarProps> = ({
 
   const resultMessage = currentResult.success ? "You Won!" : `You Lost.`;
 
-  const description = `Number was ${
-    currentResult.condition === GameCondition.UNDER &&
-    currentResult.result > currentResult.threshold
-      ? "higher"
-      : currentResult.condition === GameCondition.OVER &&
-          currentResult.result < currentResult.threshold
-        ? "lower"
-        : "exactly at threshold"
-  }`;
+  const getDescription = () => {
+    if (currentResult.condition === GameCondition.UNDER && currentResult.result > currentResult.threshold) {
+      return "higher";
+    }
+
+    if (currentResult.condition === GameCondition.OVER && currentResult.result < currentResult.threshold) {
+      return "lower";
+    }
+
+    return "exactly at threshold";
+  };
+
+  const description = `Number was ${getDescription()}`;
 
   return (
     <Snackbar
